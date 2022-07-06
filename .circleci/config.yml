@@ -26,7 +26,7 @@ jobs:
       - checkout
       - run:
           name: "echo my name"
-          command: echo First_env_var
+          command: "echo First_env_var"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
