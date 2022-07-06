@@ -18,9 +18,21 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 
+  print-myName:
+    docker:
+      -image: cimg/base:stable
+
+    steps: 
+      -checkout
+      - run:
+          name: "echo my name"
+          command: 
+            echo First_env_var
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - print-myName
